@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+    <html lang="ru">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Косметический тест</title>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>    
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="floating-bubbles"></div>
+        <div class="top-panel">
+            <button onclick="showMain()">Вернуться на главную</button>
+            <button onclick="startTest('skin')">Тестс на тип кожи</button>
+            <button onclick="startTest('hair')">Тест на тип волос</button>
+        </div>
+
+        <section class="hero" id="hero">
+            <h1>Найди свою идеальную косметику</h1>
+            <p>Пройди быстрый тест и получи персональные рекомендации!</p>
+            <p>Выбери тест и узнай, какая косметика тебе подходит.</p>
+        </section>
+
+        <section class="test-section" id="testSection" style="display: none;">
+            <h2 id="testTitle">Тест</h2>
+            <div id="progress"></div>
+            <div id="question"></div>
+            <div id="options"></div>
+            <button id="nextButton" onclick="nextQuestion()" style="display: none;">Далее</button>
+        </section>
+
+        <section class="result-section" id="resultSection" style="display: none;">
+            <h2>Ваш результат</h2>
+            <p id="testResult"></p>
+            <h3>Рекомендуемая косметика</h3>
+            <div id="recommendations"></div>
+            <button onclick="showMain()">Вернуться на главную</button>
+        </section>
+    <section class="testimonials">
+        <h2>Отзывы наших пользователей</h2>
+        <p>Что говорят наши клиенты</p>
+        <div class="reviews">
+            <div class="review">
+                <img src="images/anna.jpg.png" alt="Анна">
+                
+                <br><strong>Анна</strong><br>
+                <span>Студентка</span><br>
+                <span class="stars">★★★★★</span>
+                <p>Этот сайт изменил мой подход к уходу за кожей. Рекомендации действительно работают!</p>
+                
+                
+            </div>
+            <div class="review">
+                <img src="images/maria.jpg.png" alt="Мария">
+                
+                <br><strong>Мария</strong><br>
+                <span>Дизайнер</span><br>
+                <span class="stars">★★★★★</span>
+                <p>Сайт предлагает действительно персонализированные рекомендации. Я в восторге от результатов!</p>
+                
+            </div>
+            <div class="review">
+                <img src="images/irina.jpg.png" alt="Ирина">
+                
+                <br><strong>Ирина</strong><br>
+                <span>Менеджер</span><br>
+                <span class="stars">★★★★★</span>
+                <p>Прохождение тестов было увлекательным, а результаты превзошли все ожидания.</p>
+            </div>
+            
+            <div class="review">
+                <img src="images/ekaterina.jpg.png" alt="Екатерина">
+               <br><strong>Екатерина</strong><br>
+                <span>Маркетолог</span><br>
+                <span class="stars">★★★★★</span>
+                <p>Я нашла идеальные продукты для моего типа кожи. Процесс был быстрым и простым.</p>
+            </div>
+            <div class="review">
+                <img src="images/olga.jpg.png" alt="Ольга">
+                
+               <br> <strong>Ольга</strong><br>
+                <span>Фрилансер</span><br>
+                <span class="stars">★★★★★</span>
+                <p>Благодаря этому сайту я открыла для себя новые бренды, которые идеально подходят мне.</p>
+            </div>
+            <div class="review">
+                <img src="images/svetlana.jpg.png" alt="Светлана">
+                <br><strong>Светлана</strong><br>
+                <span>Учитель</span><br>
+                <span class="stars">★★★★★</span>
+                <p>Я никогда не думала, что онлайн-тесты могут быть такими точными. Рекомендую всем!</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="faq">
+        <h2>Часто задаваемые вопросы</h2>
+        <p>Узнайте больше о нашем сервисе</p>
+
+        <div class="faq-item">
+            <div class="faq-question">Как работают ваши тесты?</div>
+            <div class="faq-answer">Наши тесты анализируют ваши ответы и на их основе подбирают косметику, которая лучше всего подойдет вашему типу кожи или волос.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Нужно ли вводить данные кредитной карты?</div>
+            <div class="faq-answer">Нет, все наши тесты бесплатны, и вам не нужно вводить данные карты или другие платежные реквизиты.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Как быстро я получу рекомендации?</div>
+            <div class="faq-answer">Результаты и рекомендации появляются сразу после прохождения теста.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Могу ли я доверять вашим рекомендациям?</div>
+            <div class="faq-answer">Да! Наши рекомендации основаны на анализе дерматологов и отзывов реальных пользователей.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Какие продукты вы рекомендуете?</div>
+            <div class="faq-answer">Мы рекомендуем косметические средства, которые соответствуют вашему типу кожи или волос.</div>
+        </div>
+    </section>
+         <script src="script.js"></script> 
+</body>
+</html>
